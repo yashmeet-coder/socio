@@ -19,14 +19,10 @@ app.get('/', function (req, res) {
 });
 
 const contactEmail = nodemailer.createTransport({
-    host: "smtpout.secureserver.net",
-    port: 587,
-    secure: false,
-    secureConnection: false,
-    requireTLS:true,
+  service: "gmail",
     auth: {
-      user: "team@sociosynapse.com",
-      pass: "7017772887",
+      user: process.env.EMAIL,
+      pass: process.env.PASS,
     },
     tls:{
       ciphers:'SSLv3',
@@ -48,8 +44,8 @@ const contactEmail = nodemailer.createTransport({
     const subject = req.body.subject;
     const message = req.body.message; 
     const mail = {
-      from: "team@sociosynapse.com",
-      to: "team@sociosynapse.com",
+      from: email,
+      to: process.env.EMAIL,
       subject: "Contact Form Submission",
       html: `<p>Name: ${name}</p>
              <p>Email: ${email}</p>

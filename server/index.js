@@ -20,7 +20,8 @@ app.get('/', function (req, res) {
 });
 
 const contactEmail = nodemailer.createTransport({
-  host: "smtp-mail.outlook.com",
+  host: "smtpout.secureserver.net",
+  secure: false,
   secureConnection: false,
   port: 587,
     auth: {

@@ -25,8 +25,8 @@ const contactEmail = nodemailer.createTransport({
     secureConnection: false,
     requireTLS:true,
     auth: {
-      user: process.env.EMAIL,
-      pass: process.env.PASS,
+      user: "team@sociosynapse.com",
+      pass: "7017772887,
     },
     tls:{
       ciphers:'SSLv3',
@@ -48,8 +48,8 @@ const contactEmail = nodemailer.createTransport({
     const subject = req.body.subject;
     const message = req.body.message; 
     const mail = {
-      from: process.env.EMAIL,
-      to: process.env.EMAIL,
+      from: "team@sociosynapse.com",
+      to: "team@sociosynapse.com",
       subject: "Contact Form Submission",
       html: `<p>Name: ${name}</p>
              <p>Email: ${email}</p>

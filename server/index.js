@@ -26,7 +26,7 @@ const contactEmail = nodemailer.createTransport({
     requireTLS:true,
     auth: {
       user: "team@sociosynapse.com",
-      pass: "7017772887,
+      pass: "7017772887",
     },
     tls:{
       ciphers:'SSLv3',

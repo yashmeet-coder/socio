@@ -19,8 +19,7 @@ app.get('/', function (req, res) {
 });
 
 const contactEmail = nodemailer.createTransport({
-  service: "goDaddy",
-    host: "smtp.secureserver.net",
+    host: "smtpout.secureserver.net",
     port: 587,
     secure: false,
     secureConnection: false,

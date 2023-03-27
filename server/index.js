@@ -12,14 +12,17 @@ const path = require('path');
 app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.use("/", router);
-app.listen(5000, () => console.log("Server Running"));
+const port = process.env.port || 5000;
+app.listen(port, () => console.log("Server Running"));
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
 
 const contactEmail = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp-mail.outlook.com",
+  secureConnection: false,
+  port: 587,
     auth: {
       user: process.env.EMAIL,
       pass: process.env.PASS,
